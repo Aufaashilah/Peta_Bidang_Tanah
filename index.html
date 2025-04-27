@@ -2,36 +2,83 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peta Bidang Tanah - Aufa</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      animation: fadeIn 1.5s ease-in;
     }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5em;
+      color: #333;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    select {
+      padding: 10px 20px;
+      margin: 20px;
+      border-radius: 25px;
+      border: 2px solid #4A90E2;
+      font-size: 16px;
+      background: #ffffff;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    select:hover {
+      background: #f1f1f1;
+      border-color: #007BFF;
+    }
+
     iframe {
       width: 90%;
-      height: 90vh;
+      height: 80vh;
+      margin-top: 10px;
+      border-radius: 20px;
       border: none;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      animation: slideIn 1s ease-out;
     }
-    select {
-      padding: 8px;
-      font-size: 16px;
-      margin-bottom: 20px;
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Peta Bidang Tanah</h1>
+  <h1>📄 Peta Bidang Tanah Aufa</h1>
 
   <select id="fileSelect" onchange="changePDF()">
-    <option value="">-- Pilih File PDF --</option>
+    <option value="">-- Pilih Peta PDF --</option>
     <option value="GU_A_504632_Aufa_Ashilah.pdf">GU_A_504632_Aufa_Ashilah.pdf</option>
     <option value="PBT_Aufa.pdf">PBT_Aufa.pdf</option>
   </select>
-
-  <br>
 
   <iframe id="pdfViewer" src=""></iframe>
 
