@@ -2,11 +2,46 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Peta Bidang Tanah</title>
+  <title>Peta Bidang Tanah - Aufa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    iframe {
+      width: 90%;
+      height: 90vh;
+      border: none;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Silakan pilih file untuk ditampilkan:</h1>
-  <a href="GU_A_504632_Aufa_Ashilah.pdf" target="_blank"><b>GU_A_504632_Aufa_Ashilah.pdf</b></a><br>
-  <a href="PBT_Aufa.pdf" target="_blank"><b>PBT_Aufa.pdf</b></a>
+
+  <h1>Peta Bidang Tanah</h1>
+
+  <select id="fileSelect" onchange="changePDF()">
+    <option value="">-- Pilih File PDF --</option>
+    <option value="GU_A_504632_Aufa_Ashilah.pdf">GU_A_504632_Aufa_Ashilah.pdf</option>
+    <option value="PBT_Aufa.pdf">PBT_Aufa.pdf</option>
+  </select>
+
+  <br>
+
+  <iframe id="pdfViewer" src=""></iframe>
+
+  <script>
+    function changePDF() {
+      var select = document.getElementById("fileSelect");
+      var iframe = document.getElementById("pdfViewer");
+      iframe.src = select.value;
+    }
+  </script>
+
 </body>
 </html>
